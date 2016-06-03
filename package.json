@@ -1,0 +1,41 @@
+{
+  "name": "angular-v18",
+  "version": "0.0.0",
+  "description": "Angular Module with helpful directives and services for interfacing with IBM V18",
+  "main": " ",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.ibm.com:cio-london/angular-v18.git"
+  },
+  "keywords": [
+    "IBM",
+    "V18"
+  ],
+  "author": "Tom Ratcliffe",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.12.4",
+    "cfenv": "^1.0.3",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-ngdocs": "^0.2.13",
+    "gulp-uglify": "^1.5.3",
+    "gulp-usemin": "^0.3.22",
+    "istanbul": "^0.4.3",
+    "karma": "^0.13.22",
+    "karma-coverage": "^0.5.5",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
+    "phantomjs-prebuilt": "^2.1.7"
+  },
+  "configParams": {
+    "dir": {
+      "src": "src",
+      "dist": "dist"
+    }
+  }
+}
