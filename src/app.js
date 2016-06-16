@@ -8,31 +8,27 @@
  **/
 (function () {
     'use strict';
-    angular
-    .module('v18',
+
+    /**
+     * @ngdoc object
+     * @name v18
+     * @requires v18Select
+     * @requires v18Checkbox
+     * @requires v18Localeselector
+     * @requires v18Sticky
+     *
+     * @description
+     * # Angular & v18
+     *
+     * Main module of the application.
+     *
+     * Contains the other modules as dependencies
+     */
+    angular.module('v18',
     [
-        'v18.checkbox',
-        'v18.localeselector',
-        'v18.sticky'
-    ])
-
-    .controller('testController', TestController);
-
-    function TestController() {
-        this.locales = [
-            {
-                locale: 'en-us',
-                url: '#/en-us'
-            },
-            {
-                locale: 'fr-fr',
-                url: '#/fr-fr'
-            },
-            {
-                locale: 'es-la',
-                label: 'Latin America Stuff',
-                url: '#/es-la'
-            }
-        ];
-    }
+        'v18Select',
+        'v18Checkbox',
+        'v18Localeselector',
+        'v18Sticky'
+    ]);
 })();

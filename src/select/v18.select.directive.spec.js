@@ -10,31 +10,54 @@
     'use strict';
 
     var $compile,
-        $scope;
+        $scope,
+        $timeout;
 
     var directiveElement,
         scope;
 
     var getCompiled = function getCompiledElement(str, scp){
-        var compiledElement = $compile(element)(scp);
+        var compiledElement = $compile(str)(scp);
         scp.$digest();
         return compiledElement;
     };
 
-    beforeEach(function() {
-        module('v18.select');
+    describe('V18 Select Directive', function() {
+        beforeEach(function() {
+            module('v18Select');
+            window.IBMCore = {
+                common: {
+                    widget: {
+                        selectlist: {
+                            init: jasmine.createSpy('init')
+                        }
+                    }
+                }
+            };
 
-        inject(function(_$compile_, _$rootScope_){
-            $compile = _$compile_;
-            $scope = _$rootScope_;
+
+
+            inject(function(_$compile_, _$rootScope_, _$timeout_){
+                $compile = _$compile_;
+                $scope = _$rootScope_;
+                $timeout = _$timeout_;
+            });
+
+            directiveElement = getCompiled('<select v18-select></select>', $scope);
+            scope = directiveElement.isolateScope();
         });
 
-        directiveElement = getCompiled('<select v18-select></select>', $scope);
-        scope = directiveElement.isolateScope();
-    });
+        it('must not do anything until the next Angular cycle', function() {
+            expect(IBMCore.common.widget.selectlist.init)
+                .not.toHaveBeenCalled();
+        });
 
-    describe('V18 Select Directive', function() {
-        console.log(directiveElement);
+        it('must call the IBMCore init method after a $timeout', function() {
+            $timeout.flush();
+
+            expect(IBMCore.common.widget.selectlist.init)
+                .toHaveBeenCalledWith(directiveElement);
+        });
     });
 
 })();

@@ -9,7 +9,7 @@
 (function () {
     'use strict';
     angular
-        .module('v18.sticky')
+        .module('v18Sticky')
         .directive('v18StickyClass', [ '$window', v18Sticky ]);
 
     function v18Sticky( $window ) {
@@ -33,7 +33,6 @@
                         offset += 51;
                     }
                     var diff = windowEl.scrollTop() - element.offset().top + offset;
-                    console.log(diff);
                     if (diff >= 0) {
                         element.addClass(scope.v18StickyClass);
 

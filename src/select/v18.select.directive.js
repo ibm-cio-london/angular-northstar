@@ -6,10 +6,82 @@
  * US Government Users Restricted Rights - Use, duplication, or
  * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
  **/
+
+/**
+ * @ngdoc directive
+ * @name v18Select.directive:v18Select
+ * @restrict A
+ * @element select
+ * @description
+ * # Why do we need it?
+ * By default, if you include a select dropdown on a v18 page which is dynamically injected
+ * into the page, it is included too late to be initialised by the `www.js` file.
+ *
+ * If we don't initialise the select element, the correct styles won't be applied and v18
+ * design standards won't be met
+ *
+ * # What does this directive do?
+ * On the net available Angular cycle, it uses the `IBMCore` method to initialise the select dropdown
+ *
+ * @author Tom Ratcliffe <tomratcliffe@uk.ibm.com>
+ *
+ * @example
+ * <example module="v18Select">
+ *     <file name="index.html">
+ *         <div ng-controller="selectCtrl">
+ *              <div>
+ *                  The below select dropdown doesn't have the directive placed on it:
+ *              </div>
+ *              <select>
+ *                  <option ng-repeat="prod in examples" ng-disabled="prod.disabled">{{prod.name}}</option>
+ *              </select>
+ *
+ *              <div>
+ *                  But this dropdown does...:
+ *              </div>
+ *              <select v18-select>
+ *                  <option ng-repeat="prod in examples" ng-disabled="prod.disabled">{{prod.name}}</option>
+ *              </select>
+ *
+ *              <div>
+ *                  This whole dropdown is disabled:
+ *              </div>
+ *              <select v18-select disabled>
+ *                  <option ng-repeat="prod in examples" ng-disabled="prod.disabled">{{prod.name}}</option>
+ *              </select>
+ *
+ *              <div>
+ *                  This is a multiple selection dropdown, still works within Angular application:
+ *              </div>
+ *              <select v18-select multiple>
+ *                  <option ng-repeat="prod in examples" ng-disabled="prod.disabled">{{prod.name}}</option>
+ *              </select>
+ *         </div>
+ *
+ *     </file>
+ *
+ *     <file name="select.js">
+ *         angular.module('v18Select').controller('selectCtrl', function($scope) {
+ *              $scope.examples = [
+ *                  {
+ *                      name: 'Bluemix'
+ *                  },
+ *                  {
+ *                      name: 'Watson Analytics'
+ *                  },
+ *                  {
+ *                      name: 'This is disabled',
+ *                      disabled: true
+ *                  }
+ *              ];
+ *         });
+ *     </file>
+ * </example>
+ */
 (function () {
     'use strict';
     angular
-        .module('v18.select')
+        .module('v18Select')
         .directive('v18Select', ['$timeout', v18Select]);
 
     function v18Select ($timeout) {

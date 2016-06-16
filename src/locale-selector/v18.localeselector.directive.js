@@ -9,7 +9,7 @@
 (function () {
     'use strict';
     angular
-    .module('v18.localeselector')
+    .module('v18Localeselector')
     .directive('v18Localeselector', [ v18Locale ]);
 
     function v18Locale() {
@@ -39,7 +39,7 @@
 
                                 head.prepend(locale);
                             } else {
-                                console.log(lang);
+
                             }
                         });
 

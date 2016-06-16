@@ -8,5 +8,15 @@
  **/
 (function () {
     'use strict';
-    angular.module('v18.select', []);
+
+    /**
+     * @ngdoc object
+     * @name v18Select
+     *
+     * @description
+     * # Angular & v18
+     *
+     * Module that holds just the v18Select functionality
+     */
+    angular.module('v18Select', []);
 })();

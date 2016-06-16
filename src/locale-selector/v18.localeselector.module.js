@@ -9,5 +9,5 @@
 (function () {
     'use strict';
     angular
-        .module('v18.localeselector', []);
+        .module('v18Localeselector', []);
 })();
