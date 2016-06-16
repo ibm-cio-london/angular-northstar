@@ -4,7 +4,8 @@
   "description": "Angular Module with helpful directives and services for interfacing with IBM V18",
   "main": " ",
   "scripts": {
-    "test": "npm test"
+    "test": "gulp test",
+    "dev": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -21,21 +22,30 @@
     "cfenv": "^1.0.3",
     "del": "^2.2.0",
     "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^2.0.1",
     "gulp-load-plugins": "^1.2.2",
     "gulp-ngdocs": "^0.2.13",
     "gulp-uglify": "^1.5.3",
     "gulp-usemin": "^0.3.22",
     "istanbul": "^0.4.3",
-    "karma": "^0.13.22",
-    "karma-coverage": "^0.5.5",
+    "jasmine-core": "^2.4.1",
+    "jshint": "^2.9.2",
+    "karma": "0.13.9",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-clear-screen-reporter": "^1.0.0",
+    "karma-coverage": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.26",
-    "phantomjs-prebuilt": "^2.1.7"
+    "phantomjs-prebuilt": "^2.1.7",
+    "run-sequence": "^1.2.1"
   },
   "configParams": {
     "dir": {
       "src": "src",
-      "dist": "dist"
+      "dist": "dist",
+      "docs": "docs"
     }
   }
 }
