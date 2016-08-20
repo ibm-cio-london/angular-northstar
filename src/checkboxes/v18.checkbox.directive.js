@@ -9,7 +9,7 @@
 
 /**
  * @ngdoc directive
- * @name v18Checkbox.directive:v18Checkbox
+ * @name ibm-northstar.checkbox.directive:northstarCheckbox
  * @restrict A
  * @element input
  * @description
@@ -26,7 +26,7 @@
  * @author Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  *
  * @example
- * <example module="v18Checkbox">
+ * <example module="ibm-northstar.checkbox">
  *     <file name="index.html">
  *         <div ng-controller="checkboxCtrl">
  *              <input type="checkbox" id="ex-1">
@@ -44,7 +44,7 @@
  *     </file>
  *
  *     <file name="select.js">
- *         angular.module('v18Checkbox').controller('checkboxCtrl', function($scope) {
+ *         angular.module('ibm-northstar.checkbox').controller('checkboxCtrl', function($scope) {
  *              $scope.bool = true;
  *
  *              $scope.examples = [
@@ -66,10 +66,10 @@
 (function () {
     'use strict';
     angular
-    .module('v18Checkbox')
-    .directive('v18Checkbox', ['$timeout', v18Checkbox]);
+    .module('ibm-northstar.checkbox')
+        .directive('northstarCheckbox', ['$timeout', northstarCheckbox]);
 
-    function v18Checkbox ($timeout) {
+    function northstarCheckbox ($timeout) {
         return {
             restrict: 'A',
             require: '?ngModel',
@@ -115,9 +115,6 @@
                                 return ngModel.$setViewValue(value);
                             });
                         }
-                    })
-                    .on('ifClicked', function() {
-                        console.log('iCheck click');
                     });
                 });
             }

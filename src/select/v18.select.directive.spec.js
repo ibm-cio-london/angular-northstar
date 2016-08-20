@@ -22,9 +22,9 @@
         return compiledElement;
     };
 
-    describe('V18 Select Directive', function() {
+    fdescribe('V18 Select Directive', function() {
         beforeEach(function() {
-            module('v18Select');
+            module('ibm-northstar.select');
             window.IBMCore = {
                 common: {
                     widget: {

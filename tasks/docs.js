@@ -6,10 +6,9 @@ var docs = function (gulp, plugins, config, bSync) {
             scripts: [
                 '//1.www.s81c.com/common/v18/js/www.js',
                 '//1.www.s81c.com/common/v18/js/forms.js',
-                require('path').resolve('../bower_components/angular/angular.min.js'),
-                require('path').resolve('../bower_components/angular/angular.min.js.map'),
-                require('path').resolve('../bower_components/angular-animate/angular-animate.min.js'),
-                require('path').resolve('../bower_components/angular-animate/angular-animate.min.js.map'),
+                '../../../resources/digital-data.js',
+                '../../../bower_components/angular/angular.js',
+                '../../../bower_components/angular-animate/angular-animate.js',
                 config.dir.dist + '/app.js',
 
             ],

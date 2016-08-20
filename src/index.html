@@ -51,23 +51,23 @@
     <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
     <script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
 
-    <script src="bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
 
-    <script src="src/app.js"></script>
+    <script src="/src/app.js"></script>
 
     <!-- build:v18Locale v18.localeselector.js -->
-    <script src="src/locale-selector/v18.localeselector.module.js"></script>
-    <script src="src/locale-selector/v18.localeselector.directive.js"></script>
+    <script src="/src/locale-selector/v18.localeselector.module.js"></script>
+    <script src="/src/locale-selector/v18.localeselector.directive.js"></script>
     <!-- endbuild -->
 
     <!-- build:v18Checkbox v18.checkbox.js -->
-    <script src="src/checkboxes/v18.checkbox.module.js"></script>
-    <script src="src/checkboxes/v18.checkbox.directive.js"></script>
+    <script src="/src/checkboxes/v18.checkbox.module.js"></script>
+    <script src="/src/checkboxes/v18.checkbox.directive.js"></script>
     <!-- endbuild -->
 
     <!-- build:v18Checkbox v18.checkbox.js -->
-    <script src="src/sticky/v18.sticky.module.js"></script>
-    <script src="src/sticky/v18.sticky.directive.js"></script>
+    <script src="/src/sticky/v18.sticky.module.js"></script>
+    <script src="/src/sticky/v18.sticky.directive.js"></script>
     <!-- endbuild -->
 
 
@@ -142,14 +142,14 @@
                         <div id="ibm-content-body">
 
                             <div id="ibm-content-main"
-                                ng-app="v18"
+                                ng-app="ibm-northstar"
                                 ng-controller="testController as testing">
 
                                 <div v18-localeselector="testing.locales" class="ibm-columns">
                                     <div class="ibm-col-1-1" ng-click="testing.testFunction()">
                                         <div>
                                             <label for="v18-checkbox">V18 Styled Checkbox</label>
-                                            <input v18-checkbox ng-model="v18Checkbox" id="v18-checkbox" type="checkbox">
+                                            <input northstar-checkbox ng-model="v18Checkbox" id="v18-checkbox" type="checkbox">
                                             <span>Value of Checkbox: {{v18Checkbox}}</span>
                                         </div>
                                         <label for="non-v18-checkbox">Non V18 Styled Checkbox</label>

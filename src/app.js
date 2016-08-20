@@ -11,24 +11,29 @@
 
     /**
      * @ngdoc object
-     * @name v18
-     * @requires v18Select
-     * @requires v18Checkbox
-     * @requires v18Localeselector
-     * @requires v18Sticky
+     * @name ibm-northstar
+     * @requires ibm-northstar.select
+     * @requires ibm-northstar.checkbox
+     * @requires ibm-northstar.locale
+     * @requires ibm-northstar.sticky
      *
      * @description
-     * # Angular & v18
+     * # Angular & Northstar
      *
      * Main module of the application.
      *
      * Contains the other modules as dependencies
      */
-    angular.module('v18',
+    angular.module('ibm-northstar',
     [
-        'v18Select',
-        'v18Checkbox',
-        'v18Localeselector',
-        'v18Sticky'
+//        'ibm-northstar.select',
+        'ibm-northstar.checkbox',
+//        'ibm-northstar.locale',
+//        'ibm-northstar.sticky'
     ]);
+
+    angular.module('ibm-northstar')
+    .controller('testController', function() {
+
+    });
 })();

@@ -9,5 +9,5 @@
 (function () {
     'use strict';
     angular
-        .module('v18Checkbox', []);
+        .module('ibm-northstar.checkbox', []);
 })();
