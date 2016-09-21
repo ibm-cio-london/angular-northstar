@@ -67,6 +67,10 @@ module.exports = {
                 'named': 'always'
             }
         ],
+        'space-in-parens': [
+            2,
+            'always'
+        ],
         'array-bracket-spacing': [
             2,
             'never',

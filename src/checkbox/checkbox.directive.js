@@ -63,21 +63,21 @@
  *     </file>
  * </example>
  */
-(function () {
+( function () {
     'use strict';
     angular
-        .module('angular-northstar.checkbox')
-        .directive('northstarCheckbox', ['$timeout', v18Checkbox]);
+        .module( 'angular-northstar.checkbox' )
+        .directive( 'northstarCheckbox', ['$timeout', v18Checkbox] );
 
-    function v18Checkbox ($timeout) {
+    function v18Checkbox ( $timeout ) {
         return {
             restrict: 'A',
-            link: function ($scope, element) {
+            link: function ( $scope, element ) {
                 // Wait until next angular cycle before initialising
-                $timeout(function () {
-                    IBMCore.common.widget.checkboxradio.init(element);
-                });
+                $timeout( function () {
+                    IBMCore.common.widget.checkboxradio.init( element );
+                } );
             }
         };
     }
-})();
+} )();

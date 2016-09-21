@@ -6,10 +6,10 @@
  * US Government Users Restricted Rights - Use, duplication, or
  * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
  **/
-(function () {
+( function () {
     'use strict';
     angular
-        .module('angular-northstar', [
+        .module( 'angular-northstar', [
             'angular-northstar.checkbox',
             'angular-northstar.localeselector',
             'angular-northstar.select',
@@ -18,5 +18,5 @@
             'angular-northstar.sticky',
             'angular-northstar.tooltip',
             'angular-northstar.menunav'
-        ]);
-})();
+        ] );
+} )();

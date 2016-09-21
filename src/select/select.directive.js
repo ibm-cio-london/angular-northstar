@@ -78,21 +78,21 @@
  *     </file>
  * </example>
  */
-(function () {
+( function () {
     'use strict';
     angular
-        .module('angular-northstar.select')
-        .directive('northstarSelect', ['$timeout', northstarSelect]);
+        .module( 'angular-northstar.select' )
+        .directive( 'northstarSelect', ['$timeout', northstarSelect] );
 
-    function northstarSelect ($timeout) {
+    function northstarSelect ( $timeout ) {
         return {
             restrict: 'A',
-            link: function ($scope, element) {
+            link: function ( $scope, element ) {
                 // Wait until next angular cycle before initialising
-                $timeout(function () {
-                    IBMCore.common.widget.selectlist.init(element);
-                });
+                $timeout( function () {
+                    IBMCore.common.widget.selectlist.init( element );
+                } );
             }
         };
     }
-})();
+} )();

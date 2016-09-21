@@ -20,22 +20,22 @@
  *
  * @author Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  */
-(function () {
+( function () {
     'use strict';
     angular
-        .module('angular-northstar.menunav')
-        .directive('northstarMenunav', ['$timeout', v18menunav]);
+        .module( 'angular-northstar.menunav' )
+        .directive( 'northstarMenunav', ['$timeout', v18menunav] );
 
-    function v18menunav ($timeout) {
+    function v18menunav ( $timeout ) {
         return {
             restrict: 'A',
             templateUrl: 'angular-northstar/menunav.tpl.html',
             link: function () {
                 // Wait until next angular cycle before initialising
-                $timeout(function () {
+                $timeout( function () {
                     IBMCore.common.module.sitenavmenu.init();
-                });
+                } );
             }
         };
     }
-})();
+} )();
