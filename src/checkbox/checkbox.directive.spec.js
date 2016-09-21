@@ -16,14 +16,14 @@
     var checkboxElement;
     var radioElement;
 
-    var getCompiled = function getCompiledElement(str, scp){
+    var getCompiled = function getCompiledElement (str, scp) {
         var compiledElement = $compile(str)(scp);
         scp.$digest();
         return compiledElement;
     };
 
-    describe('Northstar Checkbox Directive', function() {
-        beforeEach(function() {
+    describe('Northstar Checkbox Directive', function () {
+        beforeEach(function () {
             module('northstar-angular.checkbox');
 
             window.IBMCore = {
@@ -36,7 +36,7 @@
                 }
             };
 
-            inject(function(_$compile_, _$rootScope_, _$timeout_){
+            inject(function (_$compile_, _$rootScope_, _$timeout_) {
                 $compile = _$compile_;
                 $scope = _$rootScope_;
                 $timeout = _$timeout_;
@@ -53,12 +53,12 @@
 
         });
 
-        it('must not do anything until the next Angular cycle', function() {
+        it('must not do anything until the next Angular cycle', function () {
             expect(IBMCore.common.widget.checkboxradio.init)
                 .not.toHaveBeenCalled();
         });
 
-        it('must call the IBMCore init method after a $timeout', function() {
+        it('must call the IBMCore init method after a $timeout', function () {
             $timeout.flush();
 
             expect(IBMCore.common.widget.checkboxradio.init)

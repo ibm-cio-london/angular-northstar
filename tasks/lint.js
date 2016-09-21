@@ -8,13 +8,21 @@
         // Also check we aren't running on Travis
         // or other CIs as we don't want to fix anything that won't
         // be committed back
-        return false && file.eslint !== null && file.eslint.fixed && !process.env.CI;
+        return file.eslint !== null && file.eslint.fixed && !process.env.CI;
     }
 
     module.exports = function eslint(gulp, gulpPlugins, dirs) {
+        var options = {};
+
+        if ( !process.env.CI ) {
+            options = {
+                fix: true
+            };
+        }
+
         return function() {
             return gulp.src(dirs.src + '/**/*.js')
-            .pipe(gulpPlugins.eslint())
+            .pipe(gulpPlugins.eslint( options ))
             .pipe(gulpPlugins.eslint.format('stylish'))
             .pipe(gulpIf(isFixed, gulp.dest(function(file) {
                 // Pipe the fixed file back to it's original location

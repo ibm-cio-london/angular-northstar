@@ -32,7 +32,7 @@
             templateUrl: 'northstar-angular/menunav.tpl.html',
             link: function () {
                 // Wait until next angular cycle before initialising
-                $timeout(function() {
+                $timeout(function () {
                     IBMCore.common.module.sitenavmenu.init();
                 });
             }

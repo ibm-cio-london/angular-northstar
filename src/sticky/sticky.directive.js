@@ -10,20 +10,20 @@
     'use strict';
     angular
         .module('northstar-angular.sticky')
-        .directive('northstarSticky', [ '$window', northstarSticky ]);
+        .directive('northstarSticky', ['$window', northstarSticky]);
 
-    function northstarSticky( $window ) {
+    function northstarSticky ( $window ) {
         return {
             scope: {
                 northstarSticky: '@',
                 stickyOtherElement: '@'
             },
-            link: function( scope, element ) {
+            link: function ( scope, element ) {
                 var windowEl = angular.element($window);
                 var body = angular.element('body');
                 var offset;
 
-                var handler = function() {
+                var handler = function () {
 
                     offset = 0;
 
@@ -54,7 +54,7 @@
 
                 windowEl.on('scroll', scope.$apply.bind(scope, handler));
 
-                scope.$on('destroy', function() {
+                scope.$on('destroy', function () {
                     windowEl.unbind('scroll', handler);
                 });
 
