@@ -17,6 +17,8 @@
   "author": "Tom Ratcliffe",
   "license": "MIT",
   "devDependencies": {
+    "angular": "^1.4.0",
+    "angular-mocks": "^1.4.0",
     "browser-sync": "^2.12.4",
     "cfenv": "^1.0.3",
     "del": "^2.2.0",

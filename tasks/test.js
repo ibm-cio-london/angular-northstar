@@ -6,7 +6,7 @@
         return function () {
             new Server({
                 configFile: require('path').resolve(__dirname + '/../karma.conf.js'),
-                singleRun: false
+                singleRun: true
             }).start();
         };
     };
