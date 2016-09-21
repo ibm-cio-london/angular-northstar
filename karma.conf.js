@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = function (config) {
-    var dirs = require('./package.json').configParams.dir;
+    var dirs = require('./package.json').configParams.dirs;
 
     config.set({
 
@@ -16,9 +16,6 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'digital-data.js',
-            'https://1.www.s81c.com/common/v18/js/www.js',
-            'https://1.www.s81c.com/common/v18/js/forms.js',
             'bower_components/angular/angular.js',
             'bower_components/angular-mocks/angular-mocks.js',
             dirs.src + '/**/*.module.js',
@@ -42,7 +39,7 @@ module.exports = function (config) {
         reporters: ['spec', 'coverage'],
 
         coverageReporter: {
-            dir: dirs.docs + '/coverage',
+            dir: dirs.build + '/coverage',
             reporters: [
                 {
                     type: 'html', subdir: '.'

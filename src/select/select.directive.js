@@ -9,7 +9,7 @@
 
 /**
  * @ngdoc directive
- * @name v18Select.directive:v18Select
+ * @name northstar-angular.select.directive:v18Select
  * @restrict A
  * @element select
  * @description
@@ -21,12 +21,12 @@
  * design standards won't be met
  *
  * # What does this directive do?
- * On the net available Angular cycle, it uses the `IBMCore` method to initialise the select dropdown
+ * On the next available Angular cycle, it uses the `IBMCore` method to initialise the select dropdown
  *
  * @author Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  *
  * @example
- * <example module="v18Select">
+ * <example module="northstar-angular.select">
  *     <file name="index.html">
  *         <div ng-controller="selectCtrl">
  *              <div>
@@ -61,7 +61,7 @@
  *     </file>
  *
  *     <file name="select.js">
- *         angular.module('v18Select').controller('selectCtrl', function($scope) {
+ *         angular.module('northstar-angular.select').controller('selectCtrl', function($scope) {
  *              $scope.examples = [
  *                  {
  *                      name: 'Bluemix'
@@ -81,15 +81,15 @@
 (function () {
     'use strict';
     angular
-        .module('v18Select')
-        .directive('v18Select', ['$timeout', v18Select]);
+        .module('northstar-angular.select')
+        .directive('northstarSelect', ['$timeout', northstarSelect]);
 
-    function v18Select ($timeout) {
+    function northstarSelect ($timeout) {
         return {
             restrict: 'A',
             link: function ($scope, element) {
                 // Wait until next angular cycle before initialising
-                $timeout(function() {
+                $timeout(function () {
                     IBMCore.common.widget.selectlist.init(element);
                 });
             }

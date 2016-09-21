@@ -53,22 +53,26 @@
 
     <script src="/bower_components/angular/angular.js"></script>
 
-    <script src="/src/app.js"></script>
+    <script src="/src/northstar.angular.module.js"></script>
 
-    <!-- build:v18Locale v18.localeselector.js -->
-    <script src="/src/locale-selector/v18.localeselector.module.js"></script>
-    <script src="/src/locale-selector/v18.localeselector.directive.js"></script>
-    <!-- endbuild -->
 
-    <!-- build:v18Checkbox v18.checkbox.js -->
-    <script src="/src/checkboxes/v18.checkbox.module.js"></script>
-    <script src="/src/checkboxes/v18.checkbox.directive.js"></script>
-    <!-- endbuild -->
+    <script src="src/checkbox/checkbox.module.js"></script>
+    <script src="src/checkbox/checkbox.directive.js"></script>
 
-    <!-- build:v18Checkbox v18.checkbox.js -->
-    <script src="/src/sticky/v18.sticky.module.js"></script>
-    <script src="/src/sticky/v18.sticky.directive.js"></script>
-    <!-- endbuild -->
+    <script src="src/localeselector/localeselector.module.js"></script>
+
+    <script src="src/select/select.module.js"></script>
+    <script src="src/select/select.directive.js"></script>
+
+    <script src="src/setsameheight/setsameheight.module.js"></script>
+
+    <script src="src/showhide/showhide.module.js"></script>
+
+    <script src="src/sticky/sticky.module.js"></script>
+
+    <script src="src/tooltip/tooltip.module.js"></script>
+
+    <script src="src/menunav/menunav.module.js"></script>
 
 
 
@@ -141,39 +145,23 @@
                     <div id="ibm-content">
                         <div id="ibm-content-body">
 
-                            <div id="ibm-content-main"
-                                ng-app="ibm-northstar"
-                                ng-controller="testController as testing">
-
-                                <div v18-localeselector="testing.locales" class="ibm-columns">
-                                    <div class="ibm-col-1-1" ng-click="testing.testFunction()">
-                                        <div>
-                                            <label for="v18-checkbox">V18 Styled Checkbox</label>
-                                            <input northstar-checkbox ng-model="v18Checkbox" id="v18-checkbox" type="checkbox">
-                                            <span>Value of Checkbox: {{v18Checkbox}}</span>
-                                        </div>
-                                        <label for="non-v18-checkbox">Non V18 Styled Checkbox</label>
-                                        <input id="non-v18-checkbox" type="checkbox">
-                                    </div>
-
+                            <div id="ibm-content-main" class="ibm-columns"
+                                ng-app="northstar-angular">
+                                <div class="ibm-col-6-1">
+                                    <input northstar-checkbox type="checkbox">
+                                    <input type="checkbox">
                                 </div>
-                                <style>
-                                    .testing {
-                                        position: fixed;
-                                        top: 0;
-                                    }
-                                </style>
-                                <div v18-sticky-class="testing" class="ibm-columns">
-                                    Test
-                                </div>
-                                <div class="ibm-columns" >
-                                    <div class="ibm-col-1-1">
-                                        <div ng-repeat="n in [1,2,3,4,5,6,7,8]">
-                                            <div ng-repeat="n in [1,2,3,4,5,6,7,8]">
-                                                {{$parent.$index}}{{$index}}
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="ibm-col-6-1">
+                                    <select>
+                                        <option value="">Hello</option>
+                                        <option value="">World</option>
+                                        <option value="" disabled>Disabled</option>
+                                    </select>
+                                    <select northstar-select>
+                                        <option value="">Hello</option>
+                                        <option value="">World</option>
+                                        <option value="" disabled>Disabled</option>
+                                    </select>
                                 </div>
 
                             </div>

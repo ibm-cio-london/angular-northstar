@@ -9,12 +9,12 @@
 (function () {
     'use strict';
 
-    var $compile,
-        $scope,
-        $timeout;
+    var $compile;
+    var $scope;
+    var $timeout;
 
-    var directiveElement,
-        scope;
+    var checkboxElement;
+    var radioElement;
 
     var getCompiled = function getCompiledElement(str, scp){
         var compiledElement = $compile(str)(scp);
@@ -22,11 +22,9 @@
         return compiledElement;
     };
 
-
-
-    describe('V18 Checkbox Directive', function() {
+    describe('Northstar Checkbox Directive', function() {
         beforeEach(function() {
-            module('v18Checkbox');
+            module('northstar-angular.checkbox');
 
             window.IBMCore = {
                 common: {
@@ -44,22 +42,36 @@
                 $timeout = _$timeout_;
             });
 
-            directiveElement = getCompiled('<input type="checkbox" v18-checkbox>yo<span>something else</span></input>', $scope);
-            scope = directiveElement.isolateScope();
+            checkboxElement = getCompiled('<input type="checkbox" northstar-checkbox ng-model="checkboxValue" ng-disabled="checkboxDisabled">yo<span>something else</span></input>', $scope);
+
+            radioElement = getCompiled('<input class="hey" type="radio" northstar-checkbox ng-model="radioValue" >yo<span>something else</span></input>', $scope);
+
+            // set scope variables
+            $scope.checkboxValue = false;
+            $scope.checkboxDisabled = false;
+            $scope.radioValue = false;
+
         });
 
         it('must not do anything until the next Angular cycle', function() {
             expect(IBMCore.common.widget.checkboxradio.init)
                 .not.toHaveBeenCalled();
-
-            console.log(angular.element(directiveElement).text());
         });
 
         it('must call the IBMCore init method after a $timeout', function() {
             $timeout.flush();
 
             expect(IBMCore.common.widget.checkboxradio.init)
-                .toHaveBeenCalledWith(directiveElement[0]);
+            .toHaveBeenCalledWith(jasmine.objectContaining({
+                0: checkboxElement[0],
+                length: 1
+            }));
+
+            expect(IBMCore.common.widget.checkboxradio.init)
+            .toHaveBeenCalledWith(jasmine.objectContaining({
+                0: radioElement[0],
+                length: 1
+            }));
         });
     });
 

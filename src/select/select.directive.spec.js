@@ -9,22 +9,21 @@
 (function () {
     'use strict';
 
-    var $compile,
-        $scope,
-        $timeout;
+    var $compile;
+    var $scope;
+    var $timeout;
 
-    var directiveElement,
-        scope;
+    var directiveElement;
 
-    var getCompiled = function getCompiledElement(str, scp){
+    var getCompiled = function getCompiledElement (str, scp) {
         var compiledElement = $compile(str)(scp);
         scp.$digest();
         return compiledElement;
     };
 
-    fdescribe('V18 Select Directive', function() {
-        beforeEach(function() {
-            module('ibm-northstar.select');
+    describe('Northstar Select Directive', function () {
+        beforeEach(function () {
+            module('northstar-angular');
             window.IBMCore = {
                 common: {
                     widget: {
@@ -35,28 +34,28 @@
                 }
             };
 
-
-
-            inject(function(_$compile_, _$rootScope_, _$timeout_){
+            inject(function (_$compile_, _$rootScope_, _$timeout_) {
                 $compile = _$compile_;
                 $scope = _$rootScope_;
                 $timeout = _$timeout_;
             });
 
-            directiveElement = getCompiled('<select v18-select></select>', $scope);
-            scope = directiveElement.isolateScope();
+            directiveElement = getCompiled('<select northstar-select></select>', $scope);
         });
 
-        it('must not do anything until the next Angular cycle', function() {
+        it('must not do anything until the next Angular cycle', function () {
             expect(IBMCore.common.widget.selectlist.init)
                 .not.toHaveBeenCalled();
         });
 
-        it('must call the IBMCore init method after a $timeout', function() {
+        it('must call the IBMCore init method after a $timeout', function () {
             $timeout.flush();
 
             expect(IBMCore.common.widget.selectlist.init)
-                .toHaveBeenCalledWith(directiveElement);
+                .toHaveBeenCalledWith(jasmine.objectContaining({
+                    0: directiveElement[0],
+                    length: 1
+                }));
         });
     });
 

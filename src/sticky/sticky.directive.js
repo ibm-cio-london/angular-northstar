@@ -9,13 +9,13 @@
 (function () {
     'use strict';
     angular
-        .module('v18Sticky')
-        .directive('v18StickyClass', [ '$window', v18Sticky ]);
+        .module('northstar-angular.sticky')
+        .directive('northstarSticky', [ '$window', northstarSticky ]);
 
-    function v18Sticky( $window ) {
+    function northstarSticky( $window ) {
         return {
             scope: {
-                v18StickyClass: '@',
+                northstarSticky: '@',
                 stickyOtherElement: '@'
             },
             link: function( scope, element ) {
@@ -24,26 +24,30 @@
                 var offset;
 
                 var handler = function() {
+
                     offset = 0;
 
-                    if (body.hasClass('ibm-sitenav-menu-sticky')) {
+                    var hidingSitenavOnSmall = true;
+
+                    if (!hidingSitenavOnSmall || (!angular.element('html').hasClass('ibm-grid-small') && body.hasClass('ibm-sitenav-menu-sticky'))) {
                         offset += 51;
                     }
+
                     if (body.hasClass('ibm-masthead-sticky-showing')) {
                         offset += 51;
                     }
                     var diff = windowEl.scrollTop() - element.offset().top + offset;
                     if (diff >= 0) {
-                        element.addClass(scope.v18StickyClass);
+                        element.addClass(scope.northstarSticky);
 
                         if (scope.stickyOtherElement) {
-                            angular.element(scope.stickyOtherElement).addClass(scope.v18StickyClass);
+                            angular.element(scope.stickyOtherElement).addClass(scope.northstarSticky);
                         }
                     } else {
-                        element.removeClass(scope.v18StickyClass);
+                        element.removeClass(scope.northstarSticky);
 
                         if (scope.stickyOtherElement) {
-                            angular.element(scope.stickyOtherElement).removeClass(scope.v18StickyClass);
+                            angular.element(scope.stickyOtherElement).removeClass(scope.northstarSticky);
                         }
                     }
                 };

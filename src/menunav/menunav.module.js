@@ -6,17 +6,9 @@
  * US Government Users Restricted Rights - Use, duplication, or
  * disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
  **/
-(function () {
+(function() {
     'use strict';
 
-    /**
-     * @ngdoc object
-     * @name v18Select
-     *
-     * @description
-     * # Angular & v18
-     *
-     * Module that holds just the v18Select functionality
-     */
-    angular.module('v18Select', []);
+    angular
+        .module('northstar-angular.menunav', []);
 })();

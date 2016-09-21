@@ -27,5 +27,8 @@ build/Release
 node_modules
 bower_components
 
-# Dist directory
-dist
+# Build directory
+build
+
+# Temp directory
+.tmp
