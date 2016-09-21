@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.showhide', []);
+        .module('angular-northstar.showhide', []);
 })();

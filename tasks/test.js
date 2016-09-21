@@ -1,7 +1,7 @@
-(function() {
+(function () {
     'use strict';
 
-    module.exports = function test() {
+    module.exports = function test () {
         var Server = require('karma').Server;
         return function () {
             new Server({

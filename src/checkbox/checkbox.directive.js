@@ -66,7 +66,7 @@
 (function () {
     'use strict';
     angular
-        .module('northstar-angular.checkbox')
+        .module('angular-northstar.checkbox')
         .directive('northstarCheckbox', ['$timeout', v18Checkbox]);
 
     function v18Checkbox ($timeout) {

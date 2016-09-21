@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.sticky', []);
+        .module('angular-northstar.sticky', []);
 })();

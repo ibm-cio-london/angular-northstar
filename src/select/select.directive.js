@@ -9,7 +9,7 @@
 
 /**
  * @ngdoc directive
- * @name northstar-angular.select.directive:v18Select
+ * @name angular-northstar.select.directive:v18Select
  * @restrict A
  * @element select
  * @description
@@ -26,7 +26,7 @@
  * @author Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  *
  * @example
- * <example module="northstar-angular.select">
+ * <example module="angular-northstar.select">
  *     <file name="index.html">
  *         <div ng-controller="selectCtrl">
  *              <div>
@@ -61,7 +61,7 @@
  *     </file>
  *
  *     <file name="select.js">
- *         angular.module('northstar-angular.select').controller('selectCtrl', function($scope) {
+ *         angular.module('angular-northstar.select').controller('selectCtrl', function($scope) {
  *              $scope.examples = [
  *                  {
  *                      name: 'Bluemix'
@@ -81,7 +81,7 @@
 (function () {
     'use strict';
     angular
-        .module('northstar-angular.select')
+        .module('angular-northstar.select')
         .directive('northstarSelect', ['$timeout', northstarSelect]);
 
     function northstarSelect ($timeout) {

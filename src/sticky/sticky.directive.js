@@ -9,7 +9,7 @@
 (function () {
     'use strict';
     angular
-        .module('northstar-angular.sticky')
+        .module('angular-northstar.sticky')
         .directive('northstarSticky', ['$window', northstarSticky]);
 
     function northstarSticky ( $window ) {

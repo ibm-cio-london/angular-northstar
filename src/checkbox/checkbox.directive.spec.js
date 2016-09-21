@@ -24,7 +24,7 @@
 
     describe('Northstar Checkbox Directive', function () {
         beforeEach(function () {
-            module('northstar-angular.checkbox');
+            module('angular-northstar.checkbox');
 
             window.IBMCore = {
                 common: {

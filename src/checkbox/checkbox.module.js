@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.checkbox', []);
+        .module('angular-northstar.checkbox', []);
 })();

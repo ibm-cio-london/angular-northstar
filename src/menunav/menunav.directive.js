@@ -23,13 +23,13 @@
 (function () {
     'use strict';
     angular
-        .module('northstar-angular.menunav')
+        .module('angular-northstar.menunav')
         .directive('northstarMenunav', ['$timeout', v18menunav]);
 
     function v18menunav ($timeout) {
         return {
             restrict: 'A',
-            templateUrl: 'northstar-angular/menunav.tpl.html',
+            templateUrl: 'angular-northstar/menunav.tpl.html',
             link: function () {
                 // Wait until next angular cycle before initialising
                 $timeout(function () {

@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.menunav', []);
+        .module('angular-northstar.menunav', []);
 })();

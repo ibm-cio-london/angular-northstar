@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.tooltip', []);
+        .module('angular-northstar.tooltip', []);
 })();

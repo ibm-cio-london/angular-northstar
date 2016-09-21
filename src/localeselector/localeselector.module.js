@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.localeselector', []);
+        .module('angular-northstar.localeselector', []);
 })();

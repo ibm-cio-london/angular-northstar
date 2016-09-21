@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.select', []);
+        .module('angular-northstar.select', []);
 })();

@@ -10,5 +10,5 @@
     'use strict';
 
     angular
-        .module('northstar-angular.setsameheight', []);
+        .module('angular-northstar.setsameheight', []);
 })();
