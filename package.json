@@ -16,7 +16,7 @@
     "Northstar"
   ],
   "author": "Tom Ratcliffe",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "devDependencies": {
     "angular": "^1.4.0",
     "angular-mocks": "^1.4.0",
