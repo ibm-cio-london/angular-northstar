@@ -11,12 +11,10 @@
     angular
         .module( 'angular-northstar', [
             'angular-northstar.checkbox',
-            'angular-northstar.localeselector',
+            'angular-northstar.menunav',
             'angular-northstar.select',
             'angular-northstar.setsameheight',
             'angular-northstar.showhide',
-            'angular-northstar.sticky',
             'angular-northstar.tooltip',
-            'angular-northstar.menunav'
         ] );
 } )();
