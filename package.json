@@ -8,11 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.ibm.com:cio-london/angular-v18.git"
+    "url": "git@github.ibm.com:cio-london/angular-northstar.git"
   },
   "keywords": [
     "IBM",
-    "V18"
+    "V18",
+    "Northstar"
   ],
   "author": "Tom Ratcliffe",
   "license": "MIT",

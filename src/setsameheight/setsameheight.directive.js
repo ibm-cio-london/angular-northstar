@@ -9,7 +9,7 @@
 
 /**
  * @ngdoc directive
- * @name v18SetSameHeight.directive:northstarSetsameheight
+ * @name northstarSetsameheight.directive:northstarSetsameheight
  * @restrict A
  * @description
  * # Why do we need it?

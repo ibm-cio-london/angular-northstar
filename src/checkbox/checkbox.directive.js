@@ -9,7 +9,7 @@
 
 /**
  * @ngdoc directive
- * @name v18Checkbox.directive:v18Checkbox
+ * @name northstarCheckbox.directive:northstarCheckbox
  * @restrict A
  * @element input
  * @description
@@ -26,16 +26,16 @@
  * @author Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  *
  * @example
- * <example module="v18Checkbox">
+ * <example module="northstarCheckbox">
  *     <file name="index.html">
  *         <div ng-controller="checkboxCtrl">
  *              <input type="checkbox" id="ex-1">
  *              <label for="ex-1">This checkbox isn't initialised properly</label>
  *
- *              <input v18-checkbox type="checkbox" id="ex-2">
+ *              <input northstar-checkbox type="checkbox" id="ex-2">
  *              <label for="ex-2">This checkbox is initialised properly</label>
  *
- *              <input v18-checkbox ng-model="bool" type="checkbox" id="ex-3">
+ *              <input northstar-checkbox ng-model="bool" type="checkbox" id="ex-3">
  *              <label for="ex-3">This checkbox is bound to <pre>$scope.bool</pre></label>
  *              <pre>$scope.bool = {{bool}}</pre>
  *              <div ng-click="bool = !bool">Click here to toggle <pre>$scope.bool</pre></div>
@@ -44,7 +44,7 @@
  *     </file>
  *
  *     <file name="select.js">
- *         angular.module('v18Checkbox').controller('checkboxCtrl', function($scope) {
+ *         angular.module('northstar-checkbox').controller('checkboxCtrl', function($scope) {
  *              $scope.bool = true;
  *
  *              $scope.examples = [
@@ -67,9 +67,9 @@
     'use strict';
     angular
         .module( 'angular-northstar.checkbox' )
-        .directive( 'northstarCheckbox', ['$timeout', v18Checkbox] );
+        .directive( 'northstarCheckbox', ['$timeout', northstarCheckbox] );
 
-    function v18Checkbox ( $timeout ) {
+    function northstarCheckbox ( $timeout ) {
         return {
             restrict: 'A',
             link: function ( $scope, element ) {

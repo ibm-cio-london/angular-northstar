@@ -9,7 +9,7 @@
 
 /**
  * @ngdoc directive
- * @name angular-northstar.select.directive:v18Select
+ * @name angular-northstar.select.directive:northstarSelect
  * @restrict A
  * @element select
  * @description
