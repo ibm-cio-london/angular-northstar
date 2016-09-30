@@ -9,10 +9,15 @@
 
     var scriptsTask = require( './tasks/scripts' )( gulp, plugins, pkg );
     var lintTask = require( './tasks/lint' )( gulp, plugins, pkg );
+    var cleanTask = require( './tasks/clean' )( gulp, plugins, pkg );
     var testTask = require( './tasks/test' )();
 
-    gulp.task( 'scripts', scriptsTask );
+    gulp.task( 'clean', cleanTask );
+    gulp.task( 'scripts', ['clean'], scriptsTask()
+             );
     gulp.task( 'test', testTask );
     gulp.task( 'lint', lintTask );
+
+    gulp.task( 'build', ['scripts'] );
 
 } )();

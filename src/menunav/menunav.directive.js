@@ -24,17 +24,37 @@
     'use strict';
     angular
         .module( 'angular-northstar.menunav' )
-        .directive( 'northstarMenunav', ['$timeout', v18menunav] );
+        .directive( 'northstarMenunav', ['$timeout', northstarMenunav] );
 
-    function v18menunav ( $timeout ) {
+    function northstarMenunav ( $timeout ) {
         return {
-            restrict: 'A',
-            templateUrl: 'angular-northstar/menunav.tpl.html',
-            link: function () {
-                // Wait until next angular cycle before initialising
-                $timeout( function () {
-                    IBMCore.common.module.sitenavmenu.init();
-                } );
+            restrict: 'E',
+            templateUrl: 'angular-northstar.menunav.tpl',
+            replace: true,
+            scope: true,
+            controller: ['$scope', function ( $scope ) {
+                var self = this;
+
+                self.init = function() {
+                    $timeout( function () {
+                        IBMCore.common.module.sitenavmenu.init();
+                        IBMCore.common.module.mobilemenu.init();
+                        IBMCore.common.module.mobilemenu.addSiteNavigation();
+                    } );
+                };
+
+                self.init();
+
+                $scope.$watch(function() {
+                    return self.navData;
+                }, function( newVal ) {
+                    console.log(newVal);
+                    self.init();
+                });
+            }],
+            controllerAs: 'northstarMenunavCtrl',
+            bindToController: {
+                navData: '='
             }
         };
     }

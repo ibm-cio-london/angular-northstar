@@ -1,7 +1,16 @@
-<div>Hello!</div>
-<div>Hello!</div>
-<div>Hello!</div>
-<div>Hello!</div>
-<div>Hello!</div>
-<div>Hello!</div>
-<div>Hello!</div>
+<div class="ibm-sitenav-menu-container" ng-click="northstarMenunavCtrl.navData = 'yo'">
+    <div class="ibm-sitenav-menu-name">
+        <a href="{{northstarMenunavCtrl.navData.primary.url || ''}}">
+            <span>{{northstarMenunavCtrl.navData.primary.title}}</span>
+        </a>
+    </div>
+    <div class="ibm-sitenav-menu-list ibm-hidden-small ibm-hidden-medium">
+        <ul role="menubar">
+            <li ng-class="{'ibm-highlight': nav.active}" role="presentation" ng-repeat="nav in northstarMenunavCtrl.navData.secondary track by $index">
+                <a role="menuitem" ng-href="{{nav.url}}">
+                    {{nav.title}}
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" ng-app="demoApp">
 
 <head>
     <meta charset="utf-8" />
@@ -47,33 +47,15 @@
     </script>
     <script src="//www.ibm.com/common/stats/ida_stats.js"></script>
     <link href="//1.www.s81c.com/common/v18/css/www.css" rel="stylesheet" />
-    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>
+    <script src="tempwww.js" defer></script>
+<!--    <script src="//1.www.s81c.com/common/v18/js/www.js"></script>-->
     <link href="//1.www.s81c.com/common/v18/css/forms.css" rel="stylesheet">
     <script src="//1.www.s81c.com/common/v18/js/forms.js"></script>
 
     <script src="/node_modules/angular/angular.js"></script>
+    <script src="app.js"></script>
 
-    <script src="/src/angular-northstar.module.js"></script>
-
-
-    <script src="src/checkbox/checkbox.module.js"></script>
-    <script src="src/checkbox/checkbox.directive.js"></script>
-
-    <script src="src/localeselector/localeselector.module.js"></script>
-
-    <script src="src/select/select.module.js"></script>
-    <script src="src/select/select.directive.js"></script>
-
-    <script src="src/setsameheight/setsameheight.module.js"></script>
-
-    <script src="src/showhide/showhide.module.js"></script>
-
-    <script src="src/sticky/sticky.module.js"></script>
-
-    <script src="src/tooltip/tooltip.module.js"></script>
-
-    <script src="src/menunav/menunav.module.js"></script>
-
+    <script src="build/dist/angular-northstar-menunav.js"></script>
 
 
     <script type="text/javascript">
@@ -88,7 +70,7 @@
     </script>
 </head>
 
-<body id="ibm-com" class="ibm-type">
+<body id="ibm-com" class="ibm-type" ng-controller="demoCtrl as d">
     <div id="ibm-top" class="ibm-landing-page">
 
         <!-- MASTHEAD_BEGIN -->
@@ -123,7 +105,7 @@
                 </div>
             </div>
         </div>
-
+        <northstar-menunav nav-data="d.exampleNavData"></northstar-menunav>
         <div id="ibm-content-wrapper">
             <header role="banner" aria-labelledby="ibm-pagetitle-h1">
 
@@ -145,8 +127,7 @@
                     <div id="ibm-content">
                         <div id="ibm-content-body">
 
-                            <div id="ibm-content-main" class="ibm-columns"
-                                ng-app="northstar-angular">
+                            <div id="ibm-content-main" class="ibm-columns">
                                 <div class="ibm-col-6-1">
                                     <input northstar-checkbox type="checkbox">
                                     <input type="checkbox">
@@ -163,7 +144,8 @@
                                         <option value="" disabled>Disabled</option>
                                     </select>
                                 </div>
-
+                                <div class="ibm-col-6-1">
+                                </div>
                             </div>
                         </div>
                     </div>
