@@ -27,7 +27,7 @@
 ( function () {
     'use strict';
     angular
-        .module( 'angular-northstar' )
+        .module( 'angular-northstar.setsameheight' )
         .directive( 'northstarSetsameheight', ['$timeout', northstarSetsameheight] );
 
     function northstarSetsameheight ( $timeout ) {
