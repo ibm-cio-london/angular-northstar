@@ -23,7 +23,7 @@
 
     describe( 'Northstar Select Directive', function () {
         beforeEach( function () {
-            module( 'angular-northstar' );
+            module( 'angular-northstar.select' );
             window.IBMCore = {
                 common: {
                     widget: {

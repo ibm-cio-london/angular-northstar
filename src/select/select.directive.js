@@ -39,21 +39,21 @@
  *              <div>
  *                  But this dropdown does...:
  *              </div>
- *              <select v18-select>
+ *              <select northstar-select>
  *                  <option ng-repeat="prod in examples" ng-disabled="prod.disabled">{{prod.name}}</option>
  *              </select>
  *
  *              <div>
  *                  This whole dropdown is disabled:
  *              </div>
- *              <select v18-select disabled>
+ *              <select northstar-select disabled>
  *                  <option ng-repeat="prod in examples" ng-disabled="prod.disabled">{{prod.name}}</option>
  *              </select>
  *
  *              <div>
  *                  This is a multiple selection dropdown, still works within Angular application:
  *              </div>
- *              <select v18-select multiple>
+ *              <select northstar-select multiple>
  *                  <option ng-repeat="prod in examples" ng-disabled="prod.disabled">{{prod.name}}</option>
  *              </select>
  *         </div>
