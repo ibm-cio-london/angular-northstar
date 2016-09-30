@@ -38,6 +38,8 @@
             directiveElement = getCompiled('<p northstar-showhide>show-hider</p>', $scope);
             scope = directiveElement.isolateScope();
 
+            window.jQuery = function() {};
+
             spyOn(window, 'jQuery').and.returnValue({
                 showhide: function() { return; }
             });

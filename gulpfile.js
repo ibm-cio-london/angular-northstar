@@ -13,8 +13,7 @@
     var testTask = require( './tasks/test' )();
 
     gulp.task( 'clean', cleanTask );
-    gulp.task( 'scripts', ['clean'], scriptsTask()
-             );
+    gulp.task( 'scripts', ['clean']);
     gulp.task( 'test', testTask );
     gulp.task( 'lint', lintTask );
 

@@ -38,6 +38,8 @@
             directiveElement = getCompiled('<p northstar-setsameheight>set same height</p>', $scope);
             scope = directiveElement.isolateScope();
 
+            window.jQuery = function() {};
+
             spyOn(window, 'jQuery').and.returnValue({
                 setsameheight: function() { return; }
             });

@@ -38,6 +38,8 @@
             directiveElement = getCompiled('<p><span data-widget="tooltip" title="A word that is difficult to understand" northstar-tooltip>complicated word</span></p>', $scope);
             scope = directiveElement.isolateScope();
 
+            window.jQuery = function() {};
+
             spyOn(window, 'jQuery').and.returnValue({
                 tooltip: function() { return; }
             });
