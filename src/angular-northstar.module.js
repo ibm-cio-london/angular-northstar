@@ -11,7 +11,6 @@
     angular
         .module( 'angular-northstar', [
             'angular-northstar.checkbox',
-            'angular-northstar.menunav',
             'angular-northstar.select',
             'angular-northstar.setsameheight',
             'angular-northstar.showhide',
