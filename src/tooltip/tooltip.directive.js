@@ -10,21 +10,21 @@
  * @author: Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  **/
 
-(function () {
+( function () {
     'use strict';
     angular
-        .module('angular-northstar.tooltip')
-        .directive('northstarTooltip', ['$timeout', northstarTooltip]);
+        .module( 'angular-northstar.tooltip' )
+        .directive( 'northstarTooltip', ['$timeout', northstarTooltip] );
 
-    function northstarTooltip ($timeout) {
+    function northstarTooltip ( $timeout ) {
         return {
             restrict: 'A',
-            link: function ($scope, element) {
+            link: function ( $scope, element ) {
                 // Wait until next angular cycle before initialising
-                $timeout(function() {
-                    jQuery(element).tooltip();
-                });
+                $timeout( function () {
+                    jQuery( element ).tooltip();
+                } );
             }
         };
     }
-})();
+} )();

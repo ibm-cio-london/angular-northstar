@@ -37,7 +37,7 @@
                 function init () {
                     // Wait until next angular cycle before initialising
                     $timeout( function () {
-                        jQuery(element).setsameheight();
+                        jQuery( element ).setsameheight();
                     } );
                 }
 
