@@ -15,7 +15,7 @@
 
     gulp.task( 'clean', cleanTask );
     gulp.task( 'copy', copyTask );
-    gulp.task( 'scripts', ['clean'], scriptsTask);
+    gulp.task( 'scripts', ['clean'], scriptsTask );
     gulp.task( 'test', testTask );
     gulp.task( 'lint', lintTask );
 

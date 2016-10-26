@@ -9,7 +9,7 @@
  * @author: Matt Parish <matthewparish@uk.ibm.com>
  * @author: Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  **/
-(function () {
+( function () {
     'use strict';
 
     var $compile,
@@ -19,42 +19,42 @@
     var directiveElement,
         scope;
 
-    var getCompiled = function getCompiledElement(str, scp){
-        var compiledElement = $compile(str)(scp);
+    var getCompiled = function getCompiledElement ( str, scp ) {
+        var compiledElement = $compile( str )( scp );
         scp.$digest();
         return compiledElement;
     };
 
-    describe('Northstar Tooltip Directive', function() {
-        beforeEach(function() {
-            module('angular-northstar.tooltip');
+    describe( 'Northstar Tooltip Directive', function () {
+        beforeEach( function () {
+            module( 'angular-northstar.tooltip' );
 
-            inject(function(_$compile_, _$rootScope_, _$timeout_){
+            inject( function ( _$compile_, _$rootScope_, _$timeout_ ) {
                 $compile = _$compile_;
                 $scope = _$rootScope_;
                 $timeout = _$timeout_;
-            });
+            } );
 
-            directiveElement = getCompiled('<p><span data-widget="tooltip" title="A word that is difficult to understand" northstar-tooltip>complicated word</span></p>', $scope);
+            directiveElement = getCompiled( '<p><span data-widget="tooltip" title="A word that is difficult to understand" northstar-tooltip>complicated word</span></p>', $scope );
             scope = directiveElement.isolateScope();
 
-            window.jQuery = function() {};
+            window.jQuery = function () {};
 
-            spyOn(window, 'jQuery').and.returnValue({
-                tooltip: function() { return; }
-            });
-        });
+            spyOn( window, 'jQuery' ).and.returnValue( {
+                tooltip: function () { return; }
+            } );
+        } );
 
-        it('must not do anything until the next Angular cycle', function() {
-            expect(window.jQuery)
+        it( 'must not do anything until the next Angular cycle', function () {
+            expect( window.jQuery )
                 .not.toHaveBeenCalled();
-        });
+        } );
 
-        it('must call the IBMCore init method after a $timeout', function() {
+        it( 'must call the IBMCore init method after a $timeout', function () {
             $timeout.flush();
 
-            expect(window.jQuery).toHaveBeenCalled();
-        });
-    });
+            expect( window.jQuery ).toHaveBeenCalled();
+        } );
+    } );
 
-})();
+} )();

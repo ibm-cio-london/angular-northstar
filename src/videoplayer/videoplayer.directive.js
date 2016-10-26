@@ -9,21 +9,21 @@
  * @author: Tom Ratcliffe <tomratcliffe@uk.ibm.com>
  **/
 
-(function () {
+( function () {
     'use strict';
     angular
-        .module('angular-northstar.videoplayer')
-        .directive('northstarVideoplayer', ['$timeout', videoplayer]);
+        .module( 'angular-northstar.videoplayer' )
+        .directive( 'northstarVideoplayer', ['$timeout', videoplayer] );
 
-    function videoplayer ($timeout) {
+    function videoplayer ( $timeout ) {
         return {
             restrict: 'A',
-            link: function ($scope, element) {
+            link: function ( $scope, element ) {
                 // Wait until next angular cycle before initialising
-                $timeout(function() {
-                    jQuery(element).videoplayer();
-                });
+                $timeout( function () {
+                    jQuery( element ).videoplayer();
+                } );
             }
         };
     }
-})();
+} )();

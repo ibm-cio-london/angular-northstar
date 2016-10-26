@@ -1,7 +1,7 @@
 ( function () {
     'use strict';
 
-    var debug = require('gulp-debug');
+    var debug = require( 'gulp-debug' );
 
     module.exports = function scripts ( gulp, plugins, pkg ) {
         var fs = require( 'fs' );
@@ -24,9 +24,9 @@
         return function () {
             var folders = getFolders( scriptsPath );
 
-            var tasks = function() {
+            var tasks = function () {
                 return folders.map( function ( folder ) {
-                    console.log(path.join( tmpPath, folder, '/**/*.template.js' ));
+                    console.log( path.join( tmpPath, folder, '/**/*.template.js' ) );
                     return gulp.src(
                         [
                             path.join( scriptsPath, folder, '/**/*.module.js' ),
@@ -37,7 +37,7 @@
                             path.join( '!' + scriptsPath, folder, '/**/*.spec.js' )
                         ]
                     )
-                    .pipe(debug({title: 'All files: ' + folder}))
+                    .pipe( debug( {title: 'All files: ' + folder} ) )
                     // Concat into northstar-angular.{folder}.js
                     .pipe( plugins.concat( namespace + '-' + folder + '.js' ) )
                     // Write to dist folder
@@ -50,14 +50,14 @@
                 } );
             };
 
-            var templates = function() {
+            var templates = function () {
                 return folders.map( function ( folder ) {
                     return gulp.src(
                         [
                             path.join( scriptsPath, folder, '/**/*.html' )
                         ]
                     )
-                    .pipe(debug({title: 'Templates: ' + folder}))
+                    .pipe( debug( {title: 'Templates: ' + folder} ) )
                     .pipe( plugins.angularTemplatecache( {
                         module: namespace + '.' + folder,
                         transformUrl: function () {
@@ -72,7 +72,7 @@
             };
 
             // process all remaining files in scriptsPath root into main.js and main.min.js files
-            var root = function() {
+            var root = function () {
                 return gulp.src(
                     [
                         path.join( scriptsPath, '/**/*.module.js' ),
@@ -82,7 +82,7 @@
                         path.join( '!' + scriptsPath, '/**/*.spec.js' )
                     ]
                 )
-                .pipe(debug({title: 'Root: '}))
+                .pipe( debug( {title: 'Root: '} ) )
                 .pipe( plugins.concat( namespace + '.js' ) )
                 .pipe( gulp.dest( outputPath ) )
                 .pipe( plugins.uglify() )

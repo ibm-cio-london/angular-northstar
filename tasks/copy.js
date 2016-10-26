@@ -8,7 +8,7 @@
         var buildDir = dirs.build;
 
         return function () {
-            return gulp.src( [ './package.json', './README.md', './LICENSE.txt' ] )
+            return gulp.src( ['./package.json', './README.md', './LICENSE.txt'] )
             .pipe( gulp.dest( buildDir ) );
         };
     };

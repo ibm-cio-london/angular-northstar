@@ -26,7 +26,7 @@
             restrict: 'A',
             link: function ( $scope, element ) {
                 $timeout( function () {
-                    jQuery(element).showhide();
+                    jQuery( element ).showhide();
                 } );
             }
         };
