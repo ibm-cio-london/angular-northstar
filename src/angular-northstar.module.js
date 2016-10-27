@@ -15,6 +15,6 @@
             'angular-northstar.setsameheight',
             'angular-northstar.showhide',
             'angular-northstar.tooltip',
-            'angular-northstar.videoplayer',
+            'angular-northstar.videoplayer'
         ] );
 } )();

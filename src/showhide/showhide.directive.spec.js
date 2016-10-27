@@ -12,12 +12,9 @@
 ( function () {
     'use strict';
 
-    var $compile,
-        $scope,
-        $timeout;
-
-    var directiveElement,
-        scope;
+    var $compile;
+    var $scope;
+    var $timeout;
 
     var getCompiled = function getCompiledElement ( str, scp ) {
         var compiledElement = $compile( str )( scp );
@@ -35,8 +32,7 @@
                 $timeout = _$timeout_;
             } );
 
-            directiveElement = getCompiled( '<p northstar-showhide>show-hider</p>', $scope );
-            scope = directiveElement.isolateScope();
+            getCompiled( '<p northstar-showhide>show-hider</p>', $scope );
 
             window.jQuery = function () {};
 
