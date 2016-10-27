@@ -12,12 +12,9 @@
 ( function () {
     'use strict';
 
-    var $compile,
-        $scope,
-        $timeout;
-
-    var directiveElement,
-        scope;
+    var $compile;
+    var $scope;
+    var $timeout;
 
     var getCompiled = function getCompiledElement ( str, scp ) {
         var compiledElement = $compile( str )( scp );
@@ -35,8 +32,7 @@
                 $timeout = _$timeout_;
             } );
 
-            directiveElement = getCompiled( '<p><span data-widget="tooltip" title="A word that is difficult to understand" northstar-tooltip>complicated word</span></p>', $scope );
-            scope = directiveElement.isolateScope();
+            getCompiled( '<p><span data-widget="tooltip" title="A word that is difficult to understand" northstar-tooltip>complicated word</span></p>', $scope );
 
             window.jQuery = function () {};
 
