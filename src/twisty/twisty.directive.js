@@ -13,16 +13,27 @@
     'use strict';
     angular
         .module( 'angular-northstar.twisty' )
-        .directive( 'northstarTwisty', ['$timeout', northstarTwisty] );
+        .directive( 'northstarTwisty', ['$compile', northstarTwisty] );
 
-    function northstarTwisty ( $timeout ) {
+    function northstarTwisty ( $compile ) {
         return {
             restrict: 'A',
             link: function ( $scope, element ) {
-                // Wait until next angular cycle before initialising
-                $timeout( function () {
-                    jQuery( element ).twisty();
-                } );
+
+                /*
+                    Initialise the twisty on this element
+                */
+                angular.element( element ).twisty();
+
+                /*
+                    The Northstar JavaScript wraps Twisty widgets in additional HTML, and in the
+                    process it breaks any directives that might have been added to twisty elements
+                    (angular-translate, for example).
+
+                    This line runs $compile on the element contents after the twisty widget has
+                    been initialised, to make sure all of our directives still work
+                */
+                $compile( element.contents() )( $scope );
             }
         };
     }

@@ -13,7 +13,8 @@
 
     var $compile;
     var $scope;
-    var $timeout;
+
+    var element;
 
 
     var getCompiled = function getCompiledElement ( str, scp ) {
@@ -24,34 +25,48 @@
 
     describe( 'Northstar Twisty Directive', function () {
         beforeEach( function () {
+
+            angular.element.fn.twisty = jasmine.createSpy( 'twisty' );
+
             module( 'angular-northstar.twisty' );
 
-            inject( function ( _$compile_, _$rootScope_, _$timeout_ ) {
+            inject( function ( _$compile_, _$rootScope_ ) {
                 $compile = _$compile_;
                 $scope = _$rootScope_;
-                $timeout = _$timeout_;
             } );
 
-            getCompiled( '<span data-widget="twisty" northstar-twisty></span>', $scope );
+            $scope.clickFunction = function clickFunction () {
+                $scope.testBool = true;
+            };
 
-            window.jQuery = function () {};
+            var elementString =
+                '<ul id="testFixture" data-widget="twisty" class="ibm-twisty" northstar-twisty>' +
+                    '<li>' +
+                        '<span class="ibm-twisty-head">' +
+                            '<a id="testFixtureLink" ng-click="clickFunction();">Twisty</a>' +
+                        '</span>' +
+                    '</li>' +
+                '</ul>';
 
-            spyOn( window, 'jQuery' ).and.returnValue( {
-                twisty: function () { return; }
-            } );
+            element = getCompiled( elementString, $scope );
+
         } );
 
-        it( 'must not do anything until the next Angular cycle', function () {
-            expect( window.jQuery )
-                .not.toHaveBeenCalled();
-            console.log( 'test' );
+        it( 'must call the twisty method', function () {
+            expect( angular.element.fn.twisty ).toHaveBeenCalled();
         } );
 
-        it( 'must call the jQuery method after a $timeout', function () {
-            $timeout.flush();
+        it( 'must not break any directives or interactions on the element', function () {
 
-            expect( window.jQuery ).toHaveBeenCalled();
+            expect( $scope.testBool ).toBe( undefined );
+
+            element.find( '#testFixtureLink' ).click();
+
+            $scope.$apply();
+
+            expect( $scope.testBool ).toBe( true );
         } );
     } );
 
 } )();
+
