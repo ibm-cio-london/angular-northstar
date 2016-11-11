@@ -17,6 +17,8 @@
 
             archive.glob( '**/*', {
                 ignore: filesToBeIgnored
+            }, {
+                prefix: pkg.name
             } );
 
             archive.pipe( output );
