@@ -5,7 +5,7 @@
   "scripts": {
     "test": "gulp lint && gulp test",
     "dev": "gulp watch",
-    "build": "npm test && gulp build"
+    "build": "gulp build"
   },
   "keywords": [
     "IBM",

@@ -1,1 +1,12 @@
 language: node_js
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: releases
+  file: angular-northstar.zip
+  skip_cleanup: true
+  on:
+    tags: true
+  api_key:
+    secure: KSyj2m/2ontO0hG8/K54Qpl+bVEJvx4b/OHk54V7u221P4yu+Tj+DBMRpvW8Wie6vMbQmKuE8Idr9xsratbqr35/1lmaTLGu07UGdl7bd9lWi10WLrM/a/KC82HKk5is60bd0EfMQzU71txs48aWMhjKCDvWCKxwSns1dEGF6NU=
