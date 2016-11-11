@@ -9,7 +9,7 @@
         var merge = require( 'merge-stream' );
 
         var scriptsPath = pkg.configParams.dirs.src;
-        var outputPath = pkg.configParams.dirs.build + '/' + pkg.configParams.dirs.dist;
+        var outputPath = pkg.configParams.dirs.dist;
         var tmpPath = pkg.configParams.dirs.tmp;
 
         var namespace = pkg.name;

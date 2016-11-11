@@ -40,7 +40,7 @@ module.exports = function (config) {
         reporters: ['spec', 'coverage'],
 
         coverageReporter: {
-            dir: dirs.build + '/coverage',
+            dir: dirs.coverage,
             reporters: [
                 {
                     type: 'html', subdir: '.'

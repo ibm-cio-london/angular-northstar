@@ -4,7 +4,8 @@
   "description": "Angular Module with helpful directives and services for interfacing with IBM V18/Northstar",
   "scripts": {
     "test": "gulp lint && gulp test",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "build": "gulp build"
   },
   "keywords": [
     "IBM",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "angular": "^1.4.0",
     "angular-mocks": "^1.4.0",
+    "archiver": "^1.1.0",
     "browser-sync": "^2.12.4",
     "cfenv": "^1.0.3",
     "del": "^2.2.0",
@@ -50,8 +52,19 @@
     "dirs": {
       "src": "src",
       "dist": "dist",
+      "distIgnore": [
+        "node_modules/**",
+        "fixtures/**",
+        "tasks/**",
+        "gulpfile.js",
+        "*.zip",
+        ".env",
+        ".gitignore",
+        ".travis.yml"
+      ],
       "build": "build",
       "docs": "docs",
+      "coverage": "docs/coverage",
       "tmp": ".tmp"
     }
   },
