@@ -7,7 +7,7 @@ script:
 - npm run build
 deploy:
   provider: releases
-  file: angular-northstar.zip
+  file: angular-northstar.tar.gz
   skip_cleanup: true
   on:
     tags: true

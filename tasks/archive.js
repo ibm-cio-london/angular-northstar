@@ -9,9 +9,11 @@
             var archiver = require( 'archiver' );
             var fs = require( 'fs' );
 
-            var output = fs.createWriteStream( __dirname + '/../' + pkg.name + '.zip' );
+            var output = fs.createWriteStream( __dirname + '/../' + pkg.name + '.tar.gz' );
 
-            var archive = archiver( 'zip', {} );
+            var archive = archiver( 'tar', {
+                gzip: true
+            } );
 
             archive.glob( '**/*', {
                 ignore: filesToBeIgnored

@@ -62,6 +62,8 @@
         "tasks/**",
         "gulpfile.js",
         "*.zip",
+        "*.tar",
+        "*.tar.gz",
         ".env",
         ".gitignore",
         ".travis.yml"
