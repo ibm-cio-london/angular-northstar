@@ -1,6 +1,6 @@
 {
   "name": "angular-northstar",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Angular Module with helpful directives and services for interfacing with IBM V18/Northstar",
   "repository": {
     "type": "git",

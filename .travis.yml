@@ -3,8 +3,8 @@ cache:
   directories:
   - node_modules
 script:
-  - npm test
-  - npm run build
+- npm test
+- npm run build
 deploy:
   provider: releases
   file: angular-northstar.zip
@@ -12,4 +12,4 @@ deploy:
   on:
     tags: true
   api_key:
-    secure: KSyj2m/2ontO0hG8/K54Qpl+bVEJvx4b/OHk54V7u221P4yu+Tj+DBMRpvW8Wie6vMbQmKuE8Idr9xsratbqr35/1lmaTLGu07UGdl7bd9lWi10WLrM/a/KC82HKk5is60bd0EfMQzU71txs48aWMhjKCDvWCKxwSns1dEGF6NU=
+    secure: JfR7YfnmoZgZQ4X4b8SMd2Pdbq3wtqamDyiN1suiIT0tNw7G6MEnAFjSJ1Y7yNpPTgPONkUTQxAREDGXvKq644vsesnc4VmIyJmIs0z4SUdeziFDH6AVhvClGJ+5MAHDQeJrsUhXQI8+8fpBA54clWyeGfEMnYeoEFsJ+9DnOoPxwQaral/wJ2Y3ORdPqkUo7LpFiptVrrlNupUozKhOec06z3y5/u8oais13u7kukd5YmSYRD+FfsjXJqGe92dqtOuKODGPxw68sHEZvhX6q9PqJNnBc6Gwd7R9fYSL5nGU0dtjImrFDkD7is/54yBstUdoAEMdhOeDmUFp3t+KlWZUJ8yeIvk9jAweTIB432Sk18cPCH12tlygp0VCuH9QtOqnQ5Z1f6Mrmm9YntNWCaecPnLm7XivuA5yD7zrDm9CA7/XvZtHNFbF5fLsr36J+PhWK8M7RG5NePYJX7HQUUmaczyyBusUhn+8LrEdf/giJgvbspVqYyXi8cBc0UPxwRWnvJ6DPIw4P8XkeHvMK7pjCZ+0kKRJgPLUQ5C3kHbRKbvX6DyoFWNwqKfNEYTSIyOPnHbAhGqnsfJqlx/DM8mvmJeTi2tE8w8EEEEFftV/MA3SldErAc4Fl61IN+y2lvOrLYBmh672EH0DnquoHvhMmki65jUh0sLGWGV6yT8=
