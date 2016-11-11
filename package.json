@@ -2,6 +2,10 @@
   "name": "angular-northstar",
   "version": "0.0.1",
   "description": "Angular Module with helpful directives and services for interfacing with IBM V18/Northstar",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ibm-cio-london/angular-northstar.git"
+  },
   "scripts": {
     "test": "gulp lint && gulp test",
     "dev": "gulp watch",
