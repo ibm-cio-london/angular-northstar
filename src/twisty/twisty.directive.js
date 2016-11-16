@@ -15,25 +15,14 @@
         .module( 'angular-northstar.twisty' )
         .directive( 'northstarTwisty', ['$compile', northstarTwisty] );
 
-    function northstarTwisty ( $compile ) {
+    function northstarTwisty () {
         return {
             restrict: 'A',
-            link: function ( $scope, element ) {
-
+            compile: function ( element ) {
                 /*
                     Initialise the twisty on this element
                 */
                 angular.element( element ).twisty();
-
-                /*
-                    The Northstar JavaScript wraps Twisty widgets in additional HTML, and in the
-                    process it breaks any directives that might have been added to twisty elements
-                    (angular-translate, for example).
-
-                    This line runs $compile on the element contents after the twisty widget has
-                    been initialised, to make sure all of our directives still work
-                */
-                $compile( element.contents() )( $scope );
             }
         };
     }
